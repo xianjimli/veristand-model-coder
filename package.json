@@ -1,0 +1,24 @@
+{
+  "name": "veristand-model-coder",
+  "version": "1.0.0",
+  "description": "Veristand C/C++ Model Code Generator",
+  "main": "coder.js",
+  "scripts": {
+    "test": "node coder.js demos/sine-definition.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xianjimli/veristand-model-coder.git"
+  },
+  "keywords": [
+    "Veristand",
+    "Model",
+    "Coder"
+  ],
+  "author": "xianjimli@hotmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/xianjimli/veristand-model-coder/issues"
+  },
+  "homepage": "https://github.com/xianjimli/veristand-model-coder#readme"
+}

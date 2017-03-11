@@ -1,0 +1,59 @@
+{
+    "name":"sinewave",
+    "baserate":0.01,
+    "desc":"Custom Sinewave Model",
+    "parameters":{
+        "Amp":{
+            "type":"double",
+            "desc":"Amplitude",
+            "value":"1.2"
+        },
+        "Bias":{
+            "type":"double",
+            "desc":"Bias",
+            "value":"0.8"
+        },   
+        "Freq":{
+            "type":"double",
+            "desc":"Frequency",
+            "value":"2.0"
+        },   
+        "Phase":{
+            "type":"double",
+            "desc":"Phase",
+            "value":"0.0"
+        },   
+        "Gain":{
+            "type":"double",
+            "desc":"Gain",
+            "value":"3.0"
+        }
+    },
+    "Inports":{
+        "In1" : {
+            "type":"double",
+            "desc":"Input 1"
+        }
+    },
+    "Outports":{
+        "Out1" : {
+            "type":"double",
+            "desc":"Output 1"
+        }
+    },
+    "Signals":{
+        "sinewave" : {
+            "type":"double",
+            "desc":"SineWave"
+        },
+        "sum" : { 
+            "type":"double",
+            "desc":"Sinewave + In1"
+        },
+        "gain" : { 
+            "type":"double",
+            "desc":"Gain"
+        }
+    }
+
+}
