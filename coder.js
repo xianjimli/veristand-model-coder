@@ -76,15 +76,16 @@ Coder.prototype.genHeader = function(json) {
     var json = this.json;
     var name = json.name.toString();
     var filename = name+'/model.h';
-    
+    var parameters = json.Parameters;
+		
     var coderMapper = {
         "@MODEL_H@" : function() {
            return  name.toUpperCase() + '_H';
         },
         "@Parameters@" : function() {
             var str = "";
-            for(var key in json.parameters) {
-                var param = json.parameters[key];
+            for(var key in parameters) {
+                var param = parameters[key];
                 str += '\t' + param.type + ' ' + key + ';\n';
             }
             return str;
