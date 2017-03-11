@@ -85,7 +85,7 @@ typedef struct {
 
 */
 /* Define parameter attributes */
-int32_t ParameterSize DataSection(".NIVS.paramlistsize") = 5;
+int32_t ParameterSize DataSection(".NIVS.paramlistsize") = @ParameterSize@;
 NI_Parameter rtParamAttribs[] DataSection(".NIVS.paramlist") = {
 @rtParamAttribs@
 };

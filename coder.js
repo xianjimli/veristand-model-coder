@@ -137,6 +137,9 @@ Coder.prototype.genContent = function() {
         "@baserate@" : function() {
            return  json.baserate;
         },
+        "@ParameterSize@" : function() {
+           return nparams;
+        },
         "@Inports-Decl@" : function() {
             var str = "";
             inportKeys.forEach(function(key) {
