@@ -3,7 +3,7 @@
     "baserate":0.01,
     "desc":"Custom Sinewave Model",
     "ImplFileName":"sine-impl.c",
-    "parameters":{
+    "Parameters":{
         "Amp":{
             "type":"double",
             "desc":"Amplitude",

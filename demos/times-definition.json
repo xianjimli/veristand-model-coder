@@ -4,7 +4,7 @@
     "desc":"Multiple input with parameter gain",
     "ImplFileName":"times-impl.c",
     "Parameters":{
-        "Gain":{
+        "gain":{
             "type":"double",
             "desc":"Gain",
             "value":"3.0"
