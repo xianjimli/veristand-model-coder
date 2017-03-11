@@ -2,6 +2,7 @@
     "name":"sinewave",
     "baserate":0.01,
     "desc":"Custom Sinewave Model",
+    "ImplFileName":"sine-impl.c",
     "parameters":{
         "Amp":{
             "type":"double",
@@ -55,5 +56,4 @@
             "desc":"Gain"
         }
     }
-
 }

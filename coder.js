@@ -1,4 +1,5 @@
 var fs = require("fs");
+var path = require("path");
 
 function Coder() {
 }
@@ -44,6 +45,12 @@ Coder.prototype.run = function(filename) {
 
     if(!fs.existsSync(name)) {
         fs.mkdirSync(name);
+    }
+
+    if(json.ImplFileName) {
+        this.ImplFileName = path.dirname(filename) + '/' + json.ImplFileName;
+    }else{
+        this.ImplFileName = 'templates/impl.c';
     }
 
     this.genHeader(json);
@@ -104,8 +111,8 @@ Coder.prototype.genContent = function() {
     var json = this.json;
     var name = json.name.toString();
     var filename = name+'/'+name + '.c';
-    var parameters = json.parameters;
-    var paramKeys = Object.keys(json.parameters);
+    var parameters = json.Parameters;
+    var paramKeys = Object.keys(json.Parameters);
     var nparams = paramKeys.length;
 
     var inports = json.Inports;
@@ -258,8 +265,9 @@ Coder.prototype.genContent = function() {
 
             return str;
         },
-        "@--@" : function() {
-            var str = "";
+        "@implementation@" : function() {
+            var str = fs.readFileSync(coder.ImplFileName, "utf-8");
+
             return str;
         }
     }
@@ -267,7 +275,7 @@ Coder.prototype.genContent = function() {
 }
 
 if(process.argv.length < 3) {
-    console.log("Usage: ", process.argv[0] + " " + process.argv[1] + " define.json");
+    console.log("Usage: ", process.argv[0] + " " + process.argv[1] + " model-definition.json");
     process.exit();
 }
 

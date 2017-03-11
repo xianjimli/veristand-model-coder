@@ -2,7 +2,8 @@
 logs
 *.log
 npm-debug.log*
-
+sinewave 
+times
 # Runtime data
 pids
 *.pid

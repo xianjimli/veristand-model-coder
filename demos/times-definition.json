@@ -1,0 +1,31 @@
+{
+    "name":"times",
+    "baserate":0.01,
+    "desc":"Multiple input with parameter gain",
+    "ImplFileName":"times-impl.c",
+    "Parameters":{
+        "Gain":{
+            "type":"double",
+            "desc":"Gain",
+            "value":"3.0"
+        }
+    },
+    "Inports":{
+        "In1" : {
+            "type":"double",
+            "desc":"Input 1"
+        }
+    },
+    "Outports":{
+        "Out1" : {
+            "type":"double",
+            "desc":"Output 1"
+        }
+    },
+    "Signals":{
+        "gain" : { 
+            "type":"double",
+            "desc":"Gain"
+        }
+    }
+}
