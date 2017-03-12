@@ -1,0 +1,110 @@
+{
+    "name":"engine",
+    "baserate":0.01,
+    "desc":"Custom Engine Model",
+    "ImplFileName":"engine-impl.c",
+    "Parameters":{
+        "a11":{
+            "type":"double",
+            "desc":"a11",
+            "value":"-(7.0/9.0)"
+        },
+        "a12":{
+            "type":"double",
+            "desc":"a12",
+            "value":"-(2.0/3.0)"
+        },
+        "a21":{
+            "type":"double",
+            "desc":"a21",
+            "value":"0.5"
+        },
+        "a22":{
+            "type":"double",
+            "desc":"a22",
+            "value":"0"
+        },
+        "b11":{
+            "type":"double",
+            "desc":"b11",
+            "value":"2.0"
+        },
+        "c12":{
+            "type":"double",
+            "desc":"c12",
+            "value":"(1.0/3.0)"
+        },
+        "idleRPM":{
+            "type":"double",
+            "desc":"idleRPM",
+            "value":"900"
+        },
+        "redlineRPM":{
+            "type":"double",
+            "desc":"redlineRPM",
+            "value":"7000"
+        },
+        "temperature_timeConstant":{
+            "type":"double",
+            "desc":"temperature_timeConstant",
+            "value":"1.0"
+        },
+        "temperature_roomTemp":{
+            "type":"double",
+            "desc":"temperature_roomTemp",
+            "value":"25.0"
+        },
+        "temperature_operatingTempDelta":{
+            "type":"double",
+            "desc":"temperature_operatingTempDelta",
+            "value":"65.0"
+        },
+        "temperature_redlineTempDelta":{
+            "type":"double",
+            "desc":"redlineRPM",
+            "value":"100.0"
+        }
+    },
+    "Inports":{
+        "command_RPM" : {
+            "type":"double",
+            "desc":"command_RPM"
+        },
+        "command_EngineOn" : {
+            "type":"int32_t",
+            "desc":"command_EngineOn"
+        }
+    },
+    "Outports":{
+        "RPM" : {
+            "type":"double",
+            "desc":"RPM"
+        },
+        "engineTemperature" : {
+            "type":"double",
+            "desc":"engineTemperature"
+        }
+    },
+    "Signals":{
+        "RPM" : { 
+            "type":"double",
+            "desc":"RPM"
+        },
+        "engineTemperature" : { 
+            "type":"double",
+            "desc":"engineTemperatureRPM"
+        },
+        "engineOn" : { 
+            "type":"double",
+            "desc":"engineOn"
+        },
+        "state1" : { 
+            "type":"double",
+            "desc":"state1"
+        },
+        "state2" : { 
+            "type":"double",
+            "desc":"state2"
+        }
+    }
+}
