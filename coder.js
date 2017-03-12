@@ -100,6 +100,9 @@ Coder.prototype.toTypeMacro = function(type) {
         case 'double' : {
             return "rtDBL";
         }
+        case 'int' : {
+            return 'rtINT';
+        }
         default: {
             return "unkown";
         }
@@ -171,7 +174,8 @@ Coder.prototype.genContent = function() {
                 var param = parameters[key];
                 var type = coder.toTypeMacro(param.type);
                 var dimListOffset = 2*index;
-                str += '\t{ 0, "' + name+'/'+key +'", offsetof(Parameters, '+key+'), '+type+', 1, 2, '+dimListOffset+', 0}';
+                var desc = param.desc || key;
+                str += '\t{ 0, "' + name+'/'+desc +'", offsetof(Parameters, '+key+'), '+type+', 1, 2, '+dimListOffset+', 0}';
                 str += (index+1) < paramKeys.length ? ',\n' : "";
             });
             return str;
@@ -265,6 +269,13 @@ Coder.prototype.genContent = function() {
             inportKeys.forEach(function(key, index) {
                 var info = inports[key];
                 str +='\trtSignalAttribs['+(nsignals+index)+'].addr = (uintptr_t)&rtInport.'+key+';\n'
+            });
+
+           str += "\n"; 
+            signalKeys.forEach(function(key, index) {
+                var info = signals[key];
+                var value = info.value || "0";
+                str +='\trtSignal.'+key+'='+value+';\n'
             });
 
             return str;

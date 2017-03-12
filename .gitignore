@@ -3,6 +3,8 @@ logs
 *.log
 npm-debug.log*
 sinewave 
+delay
+engine
 times
 # Runtime data
 pids

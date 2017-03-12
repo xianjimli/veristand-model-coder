@@ -6,6 +6,7 @@
 
 /* User defined datatypes and constants */
 #define rtDBL	0
+#define rtINT	2
 
 /* Pull in the parameters structure from codegen.c */
 extern Parameters rtParameter[2];
@@ -45,11 +46,18 @@ Signals rtSignal;
 int32_t USER_SetValueByDataType(void* ptr, int32_t subindex, double value, int32_t type)
 {
 	switch (type) {
-		case rtDBL: 
+		case rtDBL: {
     		((double *)ptr)[subindex] = (double)value;
     		return NI_OK;
+    } 
+    case rtINT:{
+    	((int32_t *)ptr)[subindex] = (int32_t)value;
+    	return NI_OK;
+    } 
+    default: {
+      return NI_ERROR;
+    }
 	}
-  	return NI_ERROR;
 }
 
 /* INPUT: ptr, base address of value to be retrieved.
@@ -60,13 +68,18 @@ int32_t USER_SetValueByDataType(void* ptr, int32_t subindex, double value, int32
 double USER_GetValueByDataType(void* ptr, int32_t subindex, int32_t type)
 {
 	switch (type) {
-	case rtDBL:
-		return (double)(((double *)ptr)[subindex]);
-  	}
-  	{	/* return NaN, ok for vxworks and pharlap */
-	  	uint32_t nan[2] = {0xFFFFFFFF, 0xFFFFFFFF};
-		return *(double*)nan;
-	}
+    case rtDBL:{
+      return (double)(((double *)ptr)[subindex]);
+    }
+    case rtINT: {
+      return (double)(((int32_t *)ptr)[subindex]);
+    }
+    default: {
+        /* return NaN, ok for vxworks and pharlap */
+      uint32_t nan[2] = {0xFFFFFFFF, 0xFFFFFFFF};
+      return *(double*)nan;
+    }
+  }
 }
 
 /*
