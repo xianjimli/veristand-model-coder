@@ -1,6 +1,9 @@
 
 /* evaluates a transfer function with numerator [1] and denominator [1 2 3]*/
 static double engine_RPM_function(double input);
+
+#define MAXIMUM( x, y) ((x)>(y)?(x):(y))
+
 static double engine_RPM_function(double input)
 {
 	double *x = &(rtSignal.state1);

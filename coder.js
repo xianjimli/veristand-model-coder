@@ -248,7 +248,7 @@ Coder.prototype.genContent = function() {
         "@rtINAttribs@" : function() {
             var str = "";
             inportKeys.forEach(function(key, index) {
-                str += '\t{ 0, "+'+key+'", '+index+', 0, 1, 1, 1},\n';
+                str += '\t{ 0, "'+key+'", '+index+', 0, 1, 1, 1},\n';
             });
             return str;
         },

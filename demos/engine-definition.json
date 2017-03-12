@@ -71,7 +71,7 @@
             "desc":"command_RPM"
         },
         "command_EngineOn" : {
-            "type":"int32_t",
+            "type":"int",
             "desc":"command_EngineOn"
         }
     },
