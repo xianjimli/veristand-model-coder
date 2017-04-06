@@ -1,0 +1,44 @@
+{
+    "name":"power",
+    "baserate":0.01,
+    "desc":"DC Power",
+    "ImplFileName":"power-impl.c",
+    "Inports":{
+        "power_on" : {
+            "type":"int",
+            "desc":"power on"
+        },
+        "output_voltage" : {
+            "type":"double",
+            "desc":"Output voltage"
+        },
+        "output_current" : {
+            "type":"double",
+            "desc":"Output current"
+        }
+    },
+    "Outports":{
+        "output_voltage" : {
+            "type":"double",
+            "desc":"Real output voltage"
+        },
+        "output_current" : {
+            "type":"double",
+            "desc":"Real output current"
+        }
+    },
+    "Signals":{
+        "placement":{
+            "type":"double",
+            "desc":"placement",
+            "value":"0"
+        }
+    },
+    "Parameters":{
+        "placement":{
+            "type":"double",
+            "desc":"placement",
+            "value":"0"
+        }
+    }
+}
